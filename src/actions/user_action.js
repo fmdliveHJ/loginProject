@@ -1,6 +1,9 @@
 import axios from "axios";
-import { LOGIN_USER, REGISTER_USER } from "./types";
 
+export const LOGIN_USER = "login_user";
+export const REGISTER_USER = "register_user";
+
+//email, password 받은 파라미터를 dataTsubmit에 넣어줌
 export function loginUser(dataTsubmit) {
   const request = axios.post(url, dataTsubmit).then((res) => res.data);
   return {

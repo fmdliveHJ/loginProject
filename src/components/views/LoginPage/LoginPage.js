@@ -1,8 +1,8 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../../action/user_action";
 const LoginPage = () => {
+  //액션 실행함수
   const disPatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,7 +20,7 @@ const LoginPage = () => {
       email: email,
       password: password,
     };
-
+    //액션 함수loginUser를 가져옴
     disPatch(loginUser(body)).then((res) => {
       if (res.payload.loginSuccess) {
         props.history.push("/");
